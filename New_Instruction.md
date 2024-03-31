@@ -80,6 +80,7 @@ git config --global user.mail<email>
 ```sh
 Нажимаешь (Esc) пишешь (:wg)
 ```
+## Инструкция с удаленным репозиторием
 Для закачки репозитория в GitHub делай следующее:
 ```sh
 git remote add origin https://github.com/Eldargo1/-.git
@@ -93,6 +94,43 @@ git branch -M main
 git push -u origin main
 ```
 
+#### В случаее конфликта между локальным и удальенным репозиторием делай следуещее.
+На удаленный репозиторий перетяний удаленное репозиорий через команду 
+```sh
+git pull --rebase
+```
+После в VS Code прими изминение, сохраний, за комить, после:
+```sh
+git rebase --continue
+```
+И остается только Запушить 
+```sh
+git push
+```
+### Как делать Pull request
+
+1. Делаем fork репозитория, в которой потом хотим сделать pull request. Ищем кнопку Fork на странице репозитория <https://git@github.com:gulden-geekbrains/version_control.git>
+2. Выполняем команду клонирования из своей fork-копии
+```sh
+git clone git@github.com:*YOURE_GITHUB*/version_control.git
+```
+3. Создаем новую ветку и вносим необходимые изменения в файл
+```sh
+git checkout -b updatereadme
+vim README.md
+git add README.md
+git commit -m "Добавили инструкцию как создать pull request"
+```
+4. Делаем push  
+```sh
+git push --set-upstream origin updatereadme
+```
+
+5. Переходим на свою страницу репозитория. Выбираем ветку **updatereadme** и жмем кнопку **Compare & pull request**
+
+### Как подружить git с github под Windows 10
+
+Вот видео инструкция https://youtu.be/E8cIjbJMEpE
 
 ## Инструкция для работы с Markdown
 
